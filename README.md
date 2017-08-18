@@ -21,7 +21,7 @@ nvidia-docker run -it --rm ewbf-cuda-zcash-miner /root/miner --help
 
 An example command line to mine using miningpoolhub.com:
 ```
-nvidia-docker run -it --rm /root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user <login>.<worker_name> --pass x --fee 0 --api 0.0.0.0:$PORT0",
+nvidia-docker run -it --rm /root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user <login>.<worker_name> --pass x --fee 0 --api 0.0.0.0:8484",
 
 ```
 
