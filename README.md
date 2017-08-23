@@ -16,7 +16,7 @@ docker build -t ewbf-cuda-zcash-miner .
 ## Test it locally
 
 ```
-earthlablux/ewbf-cuda-zcash-miner:latest (if you want to use provided image from docker hub directly)
+nvidia-docker pull earthlablux/ewbf-cuda-zcash-miner:latest (if you want to use provided image from docker hub directly)
 nvidia-docker run -it --rm ewbf-cuda-zcash-miner /root/miner --help
 ```
 
