@@ -13,17 +13,40 @@ cd docker-ewbf-cuda-zcash-miner
 docker build -t ewbf-cuda-zcash-miner .
 ```
 
-## Test it locally
+## Test it (using dockerhub published image)
 
 ```
-nvidia-docker pull earthlablux/ewbf-cuda-zcash-miner:latest (if you want to use provided image from docker hub directly)
-nvidia-docker run -it --rm ewbf-cuda-zcash-miner /root/miner --help
+nvidia-docker pull earthlablux/ewbf-cuda-zcash-miner:latest
+nvidia-docker run -it --rm earthlablux/ewbf-cuda-zcash-miner /root/miner --help
 ```
 
-An example command line to mine using miningpoolhub.com:
+An example command line to mine using miningpoolhub.com (on my account, you can use it to actually mine something for real if you haven't choose your pool yet):
 ```
-nvidia-docker run -it --rm /root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user <login>.<worker_name> --pass x --fee 0 --api 0.0.0.0:8484",
+nvidia-docker run -it --rm --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0
+```
 
+Ouput will looks like:
+```
++-------------------------------------------------+
+|         EWBF's Zcash CUDA miner. 0.3.3b         |
++-------------------------------------------------+
+INFO: Server: europe.equihash-hub.miningpoolhub.com:20570
+INFO: Solver Auto.
+INFO: Devices: All.
+INFO: Temperature limit: 90
+INFO: Api: Disabled
+---------------------------------------------------
+INFO: Target: 0001000000000000...
+INFO: Detected new work: 93a6
+INFO: Target: 000606ec0bc553a7...
+CUDA: Device: 0 GeForce GTX 1070, 8111 MB
+CUDA: Device: 0 Selected solver: 0
+INFO 09:21:37: GPU0 Accepted share 13ms [A:1, R:0]
+INFO 09:21:51: GPU0 Accepted share 14ms [A:2, R:0]
+INFO 09:21:54: GPU0 Accepted share 13ms [A:3, R:0]
+Temp: GPU0: 68C 
+GPU0: 433 Sol/s 
+Total speed: 433 Sol/s
 ```
 
 
