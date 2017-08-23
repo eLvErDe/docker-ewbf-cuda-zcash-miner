@@ -13,6 +13,13 @@ cd docker-ewbf-cuda-zcash-miner
 docker build -t ewbf-cuda-zcash-miner .
 ```
 
+## Publish it somewhere
+
+```
+docker tag ewbf-cuda-zcash-miner docker.domain.com/mining/ewbf-cuda-zcash-miner
+docker push docker.domain.com/mining/ewbf-cuda-zcash-miner
+```
+
 ## Test it (using dockerhub published image)
 
 ```
@@ -49,13 +56,15 @@ GPU0: 433 Sol/s
 Total speed: 433 Sol/s
 ```
 
-
-## Publish it somewhere
+## Background job running forever
 
 ```
-docker tag ewbf-cuda-zcash-miner docker.domain.com/mining/ewbf-cuda-zcash-miner
-docker push docker.domain.com/mining/ewbf-cuda-zcash-miner
+nvidia-docker run -dt --restart=always -p 8484:42000 --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:42000
 ```
+
+You can check the output using `docker logs ewbf-cuda-zcash-miner -f` 
+You are supposed to have an HTTP API available on host on port 8484 but it doesn't work for me.
+
 
 ## Use it with Mesos/Marathon
 
