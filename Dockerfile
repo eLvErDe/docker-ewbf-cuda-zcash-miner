@@ -28,3 +28,8 @@ RUN mkdir /root/src \
     && tar xvzf /root/src/miner.tar.gz -C /root/src/ \
     && find /root/src -name 'miner' -exec cp {} /root/ \; \
     && chmod 0755 /root/miner
+
+# nvidia-container-runtime @ https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/8.0/runtime/Dockerfile
+LABEL com.nvidia.volumes.needed="nvidia_driver"
+ENV NVIDIA_VISIBLE_DEVICES all
+ENV NVIDIA_DRIVER_CAPABILITIES compute,utility
