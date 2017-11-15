@@ -24,7 +24,7 @@ RUN apt update && apt -y -o 'Dpkg::Options::=--force-confdef' -o 'Dpkg::Options:
 # Insert ID in the link below
 # 0B9EPp8NdigFiLVVnZDhjc2Vyc3c is "Zec Miner 0.3.4b Linux Bin.tar.gz"
 RUN mkdir /root/src \
-    && wget "https://drive.google.com/uc?export=download&id=0B9EPp8NdigFiLVVnZDhjc2Vyc3c" -O /root/src/miner.tar.gz \
+    && wget "https://drive.google.com/uc?export=download&id=0B9EPp8NdigFiV1AwZW1lY2tEcjA" -O /root/src/miner.tar.gz \
     && tar xvzf /root/src/miner.tar.gz -C /root/src/ \
     && find /root/src -name 'miner' -exec cp {} /root/ \; \
     && chmod 0755 /root/miner
