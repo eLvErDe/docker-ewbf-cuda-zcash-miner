@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-devel
+FROM debian:stretch
 
 MAINTAINER Adam Cecile <acecile@le-vert.net>
 
