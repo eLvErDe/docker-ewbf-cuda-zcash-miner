@@ -27,7 +27,8 @@ RUN mkdir /root/src \
     && wget "https://drive.google.com/uc?export=download&id=0B9EPp8NdigFiV1AwZW1lY2tEcjA" -O /root/src/miner.tar.gz \
     && tar xvzf /root/src/miner.tar.gz -C /root/src/ \
     && find /root/src -name 'miner' -exec cp {} /root/ewbf-zec-miner \; \
-    && chmod 0755 /root/ewbf-zec-miner
+    && chmod 0755 /root/ewbf-zec-miner \
+    && rm -rf /root/src/
 
 # nvidia-container-runtime @ https://gitlab.com/nvidia/cuda/blob/ubuntu16.04/8.0/runtime/Dockerfile
 LABEL com.nvidia.volumes.needed="nvidia_driver"
