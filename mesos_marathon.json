@@ -1,6 +1,6 @@
 {
   "id": "/mining/ewbf-cuda-zcash-miner",
-  "cmd": "/root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:$PORT0",
+  "cmd": "/root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:$PORT0",
   "cpus": 0.1,
   "gpus": 1,
   "mem": 128,

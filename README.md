@@ -24,12 +24,12 @@ docker push docker.domain.com/mining/ewbf-cuda-zcash-miner
 
 ```
 nvidia-docker pull earthlablux/ewbf-cuda-zcash-miner:latest
-nvidia-docker run -it --rm earthlablux/ewbf-cuda-zcash-miner /root/miner --help
+nvidia-docker run -it --rm earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --help
 ```
 
 An example command line to mine using miningpoolhub.com (on my account, you can use it to actually mine something for real if you haven't choose your pool yet):
 ```
-nvidia-docker run -it --rm --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0
+nvidia-docker run -it --rm --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0
 ```
 
 Ouput will looks like:
@@ -59,7 +59,7 @@ Total speed: 433 Sol/s
 ## Background job running forever
 
 ```
-nvidia-docker run -dt --restart=always -p 8484:42000 --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:42000
+nvidia-docker run -dt --restart=always -p 8484:42000 --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:42000
 ```
 
 You can check the output using `docker logs ewbf-cuda-zcash-miner -f` 
@@ -93,7 +93,7 @@ Fri Aug 18 15:34:37 2017
 | Processes:                                                       GPU Memory |
 |  GPU       PID  Type  Process name                               Usage      |
 |=============================================================================|
-|    0     29111    C   /root/miner                                    627MiB |
+|    0     29111    C   /root/ewbf-zec-miner                           627MiB |
 +-----------------------------------------------------------------------------+
 ```
 
