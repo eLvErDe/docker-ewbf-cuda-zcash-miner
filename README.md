@@ -59,7 +59,7 @@ Total speed: 433 Sol/s
 ## Background job running forever
 
 ```
-nvidia-docker run -dt --restart=always -p 8484:42000 --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:42000
+nvidia-docker run -dt --restart=unless-stopped -p 8484:42000 --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:42000
 ```
 
 You can check the output using `docker logs ewbf-cuda-zcash-miner -f` 
