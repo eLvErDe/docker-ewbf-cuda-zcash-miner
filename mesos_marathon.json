@@ -9,7 +9,7 @@
   "container": {
     "type": "MESOS",
     "docker": {
-      "image": "earthlablux/ewbf-cuda-zcash-miner:latest",
+      "image": "acecile/ewbf-cuda-zcash-miner:latest",
       "forcePullImage": true
     }
   }
