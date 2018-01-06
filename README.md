@@ -8,7 +8,7 @@ It has also been tested successfully on [Mesos] 1.2.1.
 ## Build images
 
 ```
-git clone https://github.com/EarthLab-Luxembourg/docker-ewbf-cuda-zcash-miner
+git clone https://github.com/eLvErDe/docker-ewbf-cuda-zcash-miner
 cd docker-ewbf-cuda-zcash-miner
 docker build -t ewbf-cuda-zcash-miner .
 ```
@@ -23,13 +23,13 @@ docker push docker.domain.com/mining/ewbf-cuda-zcash-miner
 ## Test it (using dockerhub published image)
 
 ```
-nvidia-docker pull earthlablux/ewbf-cuda-zcash-miner:latest
-nvidia-docker run -it --rm earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --help
+nvidia-docker pull acecile/ewbf-cuda-zcash-miner:latest
+nvidia-docker run -it --rm acecile/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --help
 ```
 
 An example command line to mine using miningpoolhub.com (on my account, you can use it to actually mine something for real if you haven't choose your pool yet):
 ```
-nvidia-docker run -it --rm --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0
+nvidia-docker run -it --rm --name ewbf-cuda-zcash-miner acecile/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.catchall --pass x --fee 0
 ```
 
 Ouput will looks like:
@@ -59,7 +59,7 @@ Total speed: 433 Sol/s
 ## Background job running forever
 
 ```
-nvidia-docker run -dt --restart=unless-stopped -p 8484:42000 --name ewbf-cuda-zcash-miner earthlablux/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.mesos-earthlab --pass x --fee 0 --api 0.0.0.0:42000
+nvidia-docker run -dt --restart=unless-stopped -p 8484:42000 --name ewbf-cuda-zcash-miner acecile/ewbf-cuda-zcash-miner /root/ewbf-zec-miner --server europe.equihash-hub.miningpoolhub.com --port 20570 --user acecile.catchall --pass x --fee 0 --api 0.0.0.0:42000
 ```
 
 You can check the output using `docker logs ewbf-cuda-zcash-miner -f` 
