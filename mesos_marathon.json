@@ -12,5 +12,8 @@
       "image": "acecile/ewbf-cuda-zcash-miner:latest",
       "forcePullImage": true
     }
+  },
+  "upgradeStrategy": {
+    "minimumHealthCapacity": 0
   }
 }
